@@ -113,6 +113,8 @@ if city_cols and state_cols:
     print(f"🌍 Standardizing cities using: {city_col}, {state_col}")
     cleaned_customers = standardize_city_column(cleaned_customers, city_col=city_col, state_col=state_col)
 
-
+# Drop empty rows/columns
+    cleaned_customers.dropna(how="all", inplace=True)
+    cleaned_customers.dropna(axis=1, how="all", inplace=True)
 
 #Geolocation Table 
